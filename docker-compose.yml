@@ -1,0 +1,17 @@
+version: "3"
+services:
+  datascience-rstudio:
+    image: bowenwen/dockerrstudio:latest
+    #dockerrstudio_test
+    #rocker/geospatial:3.6.1
+    volumes:
+      - $pwd:/home/rstudio
+    restart: always
+    ports:
+      - "8787:8787"
+    environment:
+      - PASSWORD=test
+      - ROOT=TRUE
+    container_name: dockerrstudio
+    command: /init
+    
